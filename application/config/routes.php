@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -49,6 +48,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['default_controller']    = 'Users/login';
+$route['404_override']          = '';
+$route['translate_uri_dashes']  = FALSE;
+
+// User routes
+$route['registration']                  = 'Users/registration';
+$route['email-activate/(:num)/(:any)']  = 'Users/activate/$1/$2';
+$route['login']                         = 'Users/login';
+$route['logout']                        = 'Users/logout';
+$route['change-password']               = 'Users/change_password';
+$route['forgot-password']               = 'Users/forgot_password';
+$route['reset-password']                = 'Users/reset_password';
+
+// Data routes
+$route['captcha/(:any)']                = 'Data/captcha/$1';
