@@ -123,7 +123,7 @@ class Login_attempt extends KE_Model {
 
 	/**
 	 * Is max login attempts exceeded
-	 * s
+	 *
 	 * @param   string  $column         Table column' name
 	 * @param   string  $value          Table column' value
 	 * @param   string  $type           Type
@@ -205,6 +205,8 @@ class Login_attempt extends KE_Model {
 	/**
 	 * Clear login attempts
 	 *
+	 * Delete login attempts from DB.
+	 *
 	 * @return bool
 	 */
 	private function clear_login_attempts()
@@ -218,6 +220,9 @@ class Login_attempt extends KE_Model {
 
 	/**
 	 * Summarise faild login
+	 *
+	 * Count faild login attempts and save into DB.
+	 * TODO: WE can set a cron job and we can summarise faild logins better.
 	 *
 	 * @return bool
 	 */
